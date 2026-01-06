@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطاقة باسل بن جمال الشخصية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-main: #222;
+            --text-sub: #666;
+            --primary: #333;
+            --border: #ddd;
+            --whatsapp: #25D366;
+            --tiktok: #000000;
+            --instagram: #E4405F;
+            --facebook: #1877F2;
+        }
+
+        [data-theme="dark"] {
+            --bg-body: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #f5f5f5;
+            --text-sub: #aaa;
+            --primary: #fff;
+            --border: #333;
+            --tiktok: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            transition: 0.3s ease;
+        }
+
+        .theme-toggle-fixed {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            color: var(--text-main);
+            font-size: 14px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            width: 100%;
+            max-width: 380px;
+            padding: 30px 25px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 250px;
+            height: 250px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 2px solid var(--border);
+            margin-bottom: 15px;
+            background-color: #f0f0f0;
+        }
+
+        .info h2 { margin: 10px 0 5px 0; font-size: 24px; }
+        .info p { color: var(--text-sub); margin: 5px 0; font-size: 15px; }
+
+        .action-btns {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: var(--bg-card);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--primary);
+        }
+
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icon:hover { transform: scale(1.2); }
+        .wa { color: var(--whatsapp); }
+        .tt { color: var(--tiktok); }
+        .ig { color: var(--instagram); }
+        .fb { color: var(--facebook); }
+
+        .map-frame {
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 120px;
+            border: 1px solid var(--border);
+        }
+
+        .designer-info {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 10px 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .designer-info:hover {
+            transform: translateY(-5px);
+            border-color: var(--whatsapp);
+        }
+
+        .designer-label {
+            font-size: 10px;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .designer-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .designer-phone {
+            font-size: 12px;
+            color: var(--whatsapp);
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+
+<button class="theme-toggle-fixed" onclick="toggleMode()">
+    <i class="fas fa-adjust"></i> الوضع الليلي
+</button>
+
+<div class="card">
+    <img src="https://i.ibb.co/0yv216rR/image.jpg" class="profile-img" alt="الأستاذ باسل جمال محمد">
+    
+    <div class="info">
+        <h2>الأستاذ \ باسل جمال محمد</h2>
+        <p>📍 سوهاج - مركز طهطا</p>
+        <p dir="ltr">📞 01101206861</p>
+    </div>
+
+    <div class="action-btns">
+        <button class="btn" onclick="saveContact()"><i class="fas fa-user-plus"></i> حفظ</button>
+        <button class="btn btn-outline" onclick="shareMe()"><i class="fas fa-share-alt"></i> مشاركة</button>
+    </div>
+
+    <div class="social-row">
+        <a href="https://wa.me/qr/FJ2VE4CF43BRH1" target="_blank" class="social-icon wa"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://vm.tiktok.com/ZSHEmx64nV4q3-J0DrV/" target="_blank" class="social-icon tt"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/baselbengamal?utm_source=qr&igsh=MXZiZWlsZm5ndGF6aA==" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1Hb2oQPqcJ/" target="_blank" class="social-icon fb"><i class="fab fa-facebook"></i></a>
+    </div>
+
+    <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14300.22416198642!2d31.5033834!3d26.7583647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f9019669527581%3A0xc665e3052a5c5314!2z2LfZh9i32KfYjCDYs9mI2YfYp9is!5e0!3m2!1sar!2seg!4v1704500000000" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
+
+<a href="https://wa.me/201101200723" target="_blank" class="designer-info">
+    <span class="designer-label">صمم بواسطة</span>
+    <span class="designer-name">أمير بن جمال</span>
+    <span class="designer-phone">+20 01101200723</span>
+</a>
+
+<script>
+    function toggleMode() {
+        const body = document.documentElement;
+        const currentTheme = body.getAttribute('data-theme');
+        body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+    }
+
+    function saveContact() {
+        const vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:باسل جمال محمد\nTEL:01101206861\nEND:VCARD";
+        const blob = new Blob([vcard], { type: "text/vcard" });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "Bassem_Gamal.vcf";
+        a.click();
+    }
+
+    function shareMe() {
+        if (navigator.share) {
+            navigator.share({ title: 'بطاقة باسل جمال محمد', url: window.location.href });
+        } else {
+            alert("رابط الموقع: " + window.location.href);
+        }
+    }
+</script>
+
+</body>
+</html>
