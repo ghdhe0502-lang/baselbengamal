@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>بطاقة باسل بن جمال الشخصية</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
             --bg-body: #f8f9fa;
@@ -17,6 +17,10 @@
             --tiktok: #000000;
             --instagram: #E4405F;
             --facebook: #1877F2;
+            --linkedin: #0077b5;
+            --twitter: #000000;
+            --threads: #000000;
+            --telegram: #26A5E4;
         }
 
         [data-theme="dark"] {
@@ -27,6 +31,8 @@
             --primary: #fff;
             --border: #333;
             --tiktok: #ffffff;
+            --twitter: #ffffff;
+            --threads: #ffffff;
         }
 
         body {
@@ -112,17 +118,20 @@
             border: 1px solid var(--primary);
         }
 
-        .social-row {
-            display: flex;
-            justify-content: center;
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             margin: 20px 0;
         }
 
         .social-icon {
-            font-size: 24px;
+            font-size: 26px;
             transition: 0.3s;
             text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .social-icon:hover { transform: scale(1.2); }
@@ -130,6 +139,10 @@
         .tt { color: var(--tiktok); }
         .ig { color: var(--instagram); }
         .fb { color: var(--facebook); }
+        .li { color: var(--linkedin); }
+        .tw { color: var(--twitter); }
+        .th { color: var(--threads); }
+        .tg { color: var(--telegram); }
 
         .map-frame {
             margin-top: 20px;
@@ -201,15 +214,19 @@
         <button class="btn btn-outline" onclick="shareMe()"><i class="fas fa-share-alt"></i> مشاركة</button>
     </div>
 
-    <div class="social-row">
-        <a href="https://wa.me/qr/FJ2VE4CF43BRH1" target="_blank" class="social-icon wa"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://vm.tiktok.com/ZSHEmx64nV4q3-J0DrV/" target="_blank" class="social-icon tt"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.instagram.com/baselbengamal?utm_source=qr&igsh=MXZiZWlsZm5ndGF6aA==" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/share/1Hb2oQPqcJ/" target="_blank" class="social-icon fb"><i class="fab fa-facebook"></i></a>
+    <div class="social-grid">
+        <a href="https://wa.me/qr/FJ2VE4CF43BRH1" target="_blank" class="social-icon wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/share/1Hb2oQPqcJ/" target="_blank" class="social-icon fb" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/baselbengamal?utm_source=qr&igsh=MXZiZWlsZm5ndGF6aA==" target="_blank" class="social-icon ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="http://t.me/baselbengamal" target="_blank" class="social-icon tg" title="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="https://www.tiktok.com/@baselbengamal" target="_blank" class="social-icon tt" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://x.com/baselbengamal" target="_blank" class="social-icon tw" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/baselbengamal" target="_blank" class="social-icon li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.threads.net/@baselbengamal" target="_blank" class="social-icon th" title="Threads"><i class="fa-brands fa-threads"></i></a>
     </div>
 
     <div class="map-frame">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14300.22416198642!2d31.5033834!3d26.7583647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f9019669527581%3A0xc665e3052a5c5314!2z2LfZh9i32KfYjCDYs9mI2YfYp9is!5e0!3m2!1sar!2seg!4v1704500000000" 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14311.666112351234!2d31.5000!3d26.7667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f96f0000000001%3A0x0!2zVGFodGEsIFNvaGFn!5e0!3m2!1sen!2seg!4v1700000000000!5m2!1sen!2seg" 
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </div>
