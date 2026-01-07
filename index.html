@@ -48,21 +48,6 @@
             transition: 0.3s ease;
         }
 
-        .theme-toggle-fixed {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 10px 15px;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            color: var(--text-main);
-            font-size: 14px;
-        }
-
         .card {
             background: var(--bg-card);
             width: 100%;
@@ -72,6 +57,25 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
             text-align: center;
             border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .theme-toggle-inline {
+            position: absolute;
+            top: 30px;
+            left: 25px;
+            background: var(--bg-body);
+            border: 1px solid var(--border);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-main);
+            font-size: 18px;
+            transition: 0.3s;
         }
 
         .profile-img {
@@ -152,55 +156,42 @@
             border: 1px solid var(--border);
         }
 
-        .designer-info {
-            position: fixed;
-            bottom: 15px;
-            right: 15px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 10px 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            text-decoration: none;
+        /* تعديلات قسم المصمم - السطر الواحد */
+        .designer-footer-row {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
             display: flex;
-            flex-direction: column;
-            gap: 2px;
-            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .designer-text-small {
+            font-size: 12px;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        .designer-icon-link {
+            text-decoration: none;
+            font-size: 16px;
             transition: 0.3s;
         }
-
-        .designer-info:hover {
-            transform: translateY(-5px);
-            border-color: var(--whatsapp);
-        }
-
-        .designer-label {
-            font-size: 10px;
-            color: var(--text-sub);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .designer-name {
-            font-size: 14px;
-            font-weight: bold;
-            color: var(--text-main);
-        }
-
-        .designer-phone {
-            font-size: 12px;
-            color: var(--whatsapp);
-            direction: ltr;
-        }
+        
+        .d-wa { color: var(--whatsapp); }
+        .d-call { color: var(--text-main); }
+        
+        .designer-icon-link:hover { transform: scale(1.2); }
     </style>
 </head>
 <body>
 
-<button class="theme-toggle-fixed" onclick="toggleMode()">
-    <i class="fas fa-adjust"></i> الوضع الليلي
-</button>
-
 <div class="card">
+    <button class="theme-toggle-inline" onclick="toggleMode()">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <img src="p.jpg" class="profile-img" alt="الأستاذ باسل جمال محمد">
     
     <div class="info">
@@ -215,42 +206,62 @@
     </div>
 
     <div class="social-grid">
-        <a href="https://wa.me/qr/FJ2VE4CF43BRH1" target="_blank" class="social-icon wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.facebook.com/share/1Hb2oQPqcJ/" target="_blank" class="social-icon fb" title="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/baselbengamal?utm_source=qr&igsh=MXZiZWlsZm5ndGF6aA==" target="_blank" class="social-icon ig" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="http://t.me/baselbengamal" target="_blank" class="social-icon tg" title="Telegram"><i class="fab fa-telegram"></i></a>
-        <a href="https://www.tiktok.com/@baselbengamal" target="_blank" class="social-icon tt" title="TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="https://x.com/baselbengamal" target="_blank" class="social-icon tw" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/baselbengamal" target="_blank" class="social-icon li" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.threads.net/@baselbengamal" target="_blank" class="social-icon th" title="Threads"><i class="fa-brands fa-threads"></i></a>
+        <a href="https://wa.me/qr/FJ2VE4CF43BRH1" target="_blank" class="social-icon wa"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/share/1Hb2oQPqcJ/" target="_blank" class="social-icon fb"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/baselbengamal?utm_source=qr&igsh=MXZiZWlsZm5ndGF6aA==" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
+        <a href="http://t.me/baselbengamal" target="_blank" class="social-icon tg"><i class="fab fa-telegram"></i></a>
+        <a href="https://www.tiktok.com/@baselbengamal" target="_blank" class="social-icon tt"><i class="fab fa-tiktok"></i></a>
+        <a href="https://x.com/baselbengamal" target="_blank" class="social-icon tw"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/baselbengamal" target="_blank" class="social-icon li"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.threads.net/@baselbengamal" target="_blank" class="social-icon th"><i class="fa-brands fa-threads"></i></a>
     </div>
 
     <div class="map-frame">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14311.666112351234!2d31.5000!3d26.7667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f96f0000000001%3A0x0!2zVGFodGEsIFNvaGFn!5e0!3m2!1sen!2seg!4v1700000000000!5m2!1sen!2seg" 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14300.0!2d31.5!3d26.76!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQ1JzM2LjAiTiAzMcKwMzAnMDAuMCJF!5e0!3m2!1sen!2seg!4v1700000000000!5m2!1sen!2seg" 
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
-</div>
 
-<a href="https://wa.me/201101200723" target="_blank" class="designer-info">
-    <span class="designer-label">صمم بواسطة</span>
-    <span class="designer-name">أمير بن جمال</span>
-    <span class="designer-phone">+20 01101200723</span>
-</a>
+    <div class="designer-footer-row">
+        <span class="designer-text-small">تصميم / أمير بن جمال</span>
+        <a href="https://wa.me/201101200723" target="_blank" class="designer-icon-link d-wa" title="واتساب">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="javascript:void(0)" onclick="saveDesigner()" class="designer-icon-link d-call" title="حفظ الرقم">
+            <i class="fas fa-id-card"></i>
+        </a>
+    </div>
+</div>
 
 <script>
     function toggleMode() {
         const body = document.documentElement;
+        const icon = document.querySelector('.theme-toggle-inline i');
         const currentTheme = body.getAttribute('data-theme');
-        body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+        if (currentTheme === 'dark') {
+            body.setAttribute('data-theme', 'light');
+            icon.className = 'fas fa-moon';
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            icon.className = 'fas fa-sun';
+        }
     }
 
     function saveContact() {
         const vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:باسل جمال محمد\nTEL:01101206861\nEND:VCARD";
+        downloadVCard(vcard, "Bassem_Gamal.vcf");
+    }
+
+    function saveDesigner() {
+        const vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:أمير بن جمال\nTEL:01101200723\nEND:VCARD";
+        downloadVCard(vcard, "Amir_Gamal.vcf");
+    }
+
+    function downloadVCard(vcard, filename) {
         const blob = new Blob([vcard], { type: "text/vcard" });
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = "Bassem_Gamal.vcf";
+        a.download = filename;
         a.click();
     }
 
